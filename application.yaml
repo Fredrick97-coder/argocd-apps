@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: afram-argo-application
+  name: myapp
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: git@github.com:Merson-Capital/afram-backend-k8s-workflows-and-orchestration.git
+    repoURL: https://github.com/Fredrick97-coder/argocd-apps.git
     targetRevision: HEAD
     path: dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: afram
+    namespace: myapp
   syncPolicy:
     syncOptions:
       - CreateNamespace=true 
